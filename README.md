@@ -16,7 +16,7 @@ A folder named "tmp" is created, and inside that folder 2 files "matrix.mtx" and
 ## How to add to Julia with Internet connection ##
 ```julia:
 using Pkg
-Pkg.develop(url="https://github.com/CHLOzzz/MMGet")
+Pkg.add(url="https://github.com/CHLOzzz/MMGet")
 using MMGet
 ```
 
@@ -28,7 +28,7 @@ using MMGet
 ## Example code ##
 ```jl:
 using Pkg
-Pkg.develop(url="https://github.com/CHLOzzz/MMGet")
+Pkg.add(url="https://github.com/CHLOzzz/MMGet")
 using MMGet
 
 display(MMGet.mmget("https://math.nist.gov/pub/MatrixMarket2/Harwell-Boeing/bcsstruc1/bcsstk01.mtx.gz"))
@@ -36,6 +36,6 @@ display(MMGet.mmget("https://math.nist.gov/pub/MatrixMarket2/Harwell-Boeing/bcss
 
 
 ## Future plans ##
-- Add error correcting / catching
+- Add URL error correcting / catching
 - Add a method to download the .mtx matrix `mmdownload`
 - Fix when it eventually breaks
