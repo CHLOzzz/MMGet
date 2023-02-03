@@ -14,22 +14,19 @@ A folder named "tmp" is created, and inside that folder 2 files "matrix.mtx" and
 
 
 ## How to add to Julia with Internet connection ##
-`
-using Pkg
-Pkg.develop(url="https://github.com/CHLOzzz/MMGet")
-using MMGet
-`
+`using Pkg`
+`Pkg.develop(url="https://github.com/CHLOzzz/MMGet")`
+`using MMGet`
+
 
 
 ## Usage ##
-mmget(url::String): Get the matrix from the .gz download from MatrixMarket.
+`mmget(url::String)`: Get the matrix from the .gz download from MatrixMarket.
 
 
 ## Example code ##
-`
-using Pkg
-Pkg.develop(url="https://github.com/CHLOzzz/MMGet")
-using MMGet
+`using Pkg`
+`Pkg.develop(url="https://github.com/CHLOzzz/MMGet")`
+`using MMGet`
 
-display(MMGet.mmget("https://math.nist.gov/pub/MatrixMarket2/Harwell-Boeing/bcsstruc1/bcsstk01.mtx.gz"))
-`
+`display(MMGet.mmget("https://math.nist.gov/pub/MatrixMarket2/Harwell-Boeing/bcsstruc1/bcsstk01.mtx.gz"))`
