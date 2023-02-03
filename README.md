@@ -26,7 +26,7 @@ using MMGet
 
 
 ## Example code ##
-```
+```jl:
 using Pkg
 Pkg.develop(url="https://github.com/CHLOzzz/MMGet")
 using MMGet
