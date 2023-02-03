@@ -1,29 +1,75 @@
 module MMGet
 
-using MatrixMarket
-using GZip
+using GZip, MatrixMarket, Random
 
 export mmget
 
 function mmget(url::String)
-    mkdir("tmp")
-    filepath = "tmp/matrix.mtx.gz"
+
+    ## Helper functions
+    function clean(dir::String, delDir::Bool, file::String, zipFile::String)
+        
+        if delDir
+            rm(dir, recursive = true)
+        else
+            rm(file)
+            rm(zipFile)
+        end # if
+        
+    end # clean
     
-    download(url, filepath)
+    function nameFile(dir::String, ext::String)
+        
+        name::String = ""
+        
+        while true
+            name = randstring(20)
+            isfile(dir*name*ext) || break
+        end # while
+        
+        return dir*name*ext
+        
+    end # nameFile
     
-    f = GZip.open(filepath)
-    filecontents = read(f)
-    close(f)
+    function setupDir(tempDir::String)
+        
+        if !isdir(tempDir)
+            mkdir(tempDir)
+            return true
+        else
+            return false
+        end # if
+        
+    end # setupDir
     
-    open("tmp/matrix.mtx", "w") do f
-        write(f, filecontents)
-    end
+    ## Initialization
+    tmpDir::String = pwd()*"/tmp/"
+    mtxFilepath::String = nameFile(tmpDir, ".mtx")
+    gzipMtxFilepath::String = nameFile(tmpDir, ".gz")
+    tmpDel::Bool = setupDir(tmpDir)
     
-    A = mmread("tmp/matrix.mtx")
+    ## Save downloaded .mtx.gz to a temp file
+    download(url, gzipMtxFilepath)
     
-    rm("tmp", recursive = true)
+    ## Extract the .mtx data from the .mtx.gz file
+    mtxGzStream::GZipStream = GZip.open(gzipMtxFilepath)
+    filecontents::Vector{UInt8} = read(mtxGzStream)
+    close(mtxGzStream)
     
-    A
-end
+    ## Write the .mtx data to a file
+    open(mtxFilepath, "w") do mtxGzStream
+        write(mtxGzStream, filecontents)
+    end # open
+    
+    ## Store the matrix to a variable to return
+    A = mmread(mtxFilepath)
+    
+    ## Cleanup
+    clean(tmpDir, tmpDel, mtxFilepath, gzipMtxFilepath)
+    
+    ## Return
+    return A
+    
+end # mmget
 
 end # module
