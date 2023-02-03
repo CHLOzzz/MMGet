@@ -10,7 +10,7 @@ An example of a good URL: "https://math.nist.gov/pub/MatrixMarket2/Harwell-Boein
 
 
 ## Behind the scenes ##
-A folder named "tmp" is created or repurposed, and inside that folder 2 files with extensions ".mtx" and ".gz" are uniquely, randomly chosen. When the matrix is obtained, the "tmp" folder is deleted before the matrix is outputted from the function only if the directory did not already exist; otherwise only deletes the temporary files.
+A folder named "tmp" is created, and inside that folder 2 files "matrix.mtx" and "matrix.mtx.gz". When the matrix is obtained, the "tmp" folder is deleted before the matrix is outputted from the function.
 
 
 ## How to add to Julia with Internet connection ##
@@ -36,5 +36,6 @@ display(MMGet.mmget("https://math.nist.gov/pub/MatrixMarket2/Harwell-Boeing/bcss
 
 
 ## Future plans ##
-- Add URL error detection
+- Add error correcting / catching
 - Add a method to download the .mtx matrix `mmdownload`
+- Fix when it eventually breaks
