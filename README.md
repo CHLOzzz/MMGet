@@ -14,7 +14,7 @@ A folder named "tmp" is created, and inside that folder 2 files "matrix.mtx" and
 
 
 ## How to add to Julia with Internet connection ##
-```
+```julia:
 using Pkg
 Pkg.develop(url="https://github.com/CHLOzzz/MMGet")
 using MMGet
