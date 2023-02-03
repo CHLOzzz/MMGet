@@ -33,3 +33,9 @@ using MMGet
 
 display(MMGet.mmget("https://math.nist.gov/pub/MatrixMarket2/Harwell-Boeing/bcsstruc1/bcsstk01.mtx.gz"))
 ```
+
+
+## Future plans ##
+- Add error correcting / catching
+- Add a method to download the .mtx matrix `mmdownload`
+- Fix when it eventually breaks
