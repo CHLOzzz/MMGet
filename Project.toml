@@ -1,0 +1,11 @@
+name = "MMGet"
+uuid = "432213b9-92d5-47f4-b6f3-47692bb23a30"
+authors = ["Chloe McCarthy <cmccarth@mtu.edu>"]
+version = "0.0.1"
+
+[deps]
+MatrixMarket = "4d4711f2-db25-561a-b6b3-d35e7d4047d3"
+GZip = "92fee26a-97fe-5a0c-ad85-20a5f3185b63"
+
+[compat]
+julia = "1"
