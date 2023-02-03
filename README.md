@@ -1,7 +1,7 @@
 # MMGet
 Julia Package to get a Matrix Market matrix directly from the website.
 
-Not an official package.
+Not an official package. Also, ChatGPT essentially wrote all the code. It started as a fun challenge, and now I have a package to more easily download MatrixMarket matrices.
 
 
 ## Expected use ##
