@@ -10,7 +10,7 @@ An example of a good URL: "https://math.nist.gov/pub/MatrixMarket2/Harwell-Boein
 
 
 ## Behind the scenes ##
-A folder named "tmp" is created, and inside that folder 2 files "matrix.mtx" and "matrix.mtx.gz". When the matrix is obtained, the "tmp" folder is deleted before the matrix is outputted from the function.
+A folder named "tmp" is created (if does not already exist), and inside that folder 2 randomly and uniquely named files with extensions ".mtx" and ".gz". When the matrix is obtained, the "tmp" folder is deleted (if created) before the matrix is outputted from the function. If the "tmp" folder already exists, only deletes the temporarily created files.
 
 
 ## How to add to Julia with Internet connection ##
