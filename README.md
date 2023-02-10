@@ -4,7 +4,9 @@ Julia Package to get a MatrixMarket matrix directly from MatrixMarket or SuiteSp
 
 ## Expected use ##
 Expected to pull from https://math.nist.gov/MatrixMarket/ or http://sparse.tamu.edu subdomains.
+
 An example of a good MatrixMarket URL: https://math.nist.gov/pub/MatrixMarket2/Harwell-Boeing/bcsstruc1/bcsstk01.mtx.gz
+
 An example of a good SuiteSparse Matrix Collection URL: https://suitesparse-collection-website.herokuapp.com/MM/AG-Monien/netz4504.tar.gz
 
 
