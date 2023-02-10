@@ -14,9 +14,13 @@ An example of a good SuiteSparse Matrix Collection URL: https://suitesparse-coll
 `mmget(url::String; keep_files::Bool = false, wants_vec_x::Bool = false, wants_vec_b::Bool = false, debug::Bool = false)`
 
 `url`: URL link address.
+
 `keep_files`: If true, does not delete downloaded files from working directory.
+
 `wants_vec_x`: If true, will attempt to output a vector x if in the downloaded .tar.gz from SuiteSparse Matrix Collection.
+
 `wants_vec_b`: If true, will attempt to output a vector b if in the downloaded .tar.gz from SuireSparse Matrix Collection.
+
 `debug`: If true, will output where in each step the function currently is.
 
 
