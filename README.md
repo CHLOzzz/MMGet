@@ -30,8 +30,11 @@ NOTE: Output is based on the linear algebra problem $Ax=b$.
 NOTE: If `wants_vec_x = true` or `wants_vec_b = true` but either vector is not available, will simply not return specific vector. Expected to always return matrix A at minimum.
 
 `wants_vec_x = false && wants_vec_b = false` => `return A`
+
 `wants_vec_x = true && wants_vec_b = false` => `return A, x`
+
 `wants_vec_x = false && wants_vec_b = false` => `return A, b`
+
 `wants_vec_x = false && wants_vec_b = false` => `return A, x, b`
 
 
